@@ -1,0 +1,46 @@
+<!--
+Build an HTML page that displays “It is Sunday!” in green color when visited on a Sunday and “It is not
+Sunday.” in blue color when visited the other days. 
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 3</title>
+        <style>
+
+            .sunday {
+                color: green;
+            }
+
+            .otherday{
+                color: blue;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                const msg = $('#msg');
+                const today = new Date().getDay();
+               
+
+                if (today === 0) {
+
+                    msg.text("It is Sunday!");
+                    msg.addClass('sunday');
+
+                } else {
+
+                    msg.text("It is not Sunday.");
+                    msg.addClass('otherday');
+
+                }
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1 class="" id="msg"></h1>
+    </body>
+</html>
